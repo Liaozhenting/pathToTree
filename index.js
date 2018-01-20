@@ -53,7 +53,7 @@ const compare = (() => {
     }
 
     return compare;
-})();    
+})();
 
 
 function arrayToPid(data) {
@@ -67,19 +67,19 @@ function arrayToPid(data) {
     let new_arr = [];
 
     sorted.map((ele, i) => {
-        let obj = {}
-        obj.id = index;
-        obj.title = ele
+        let obj           = {}
+            obj.id        = index;
+            obj.title     = ele
         let completedPath = ele.split('/')
-        obj.pid = 0;
+            obj.pid       = 0;
         new_arr.map((new_arr_ele, new_arr_index) => {
-            
+
             let new_arr_ele_completedPath = new_arr_ele.title.split('/');
-            let front_string = completedPath.slice(0, completedPath.length - 1);
-            if(compare(new_arr_ele_completedPath.slice(-1),[''])){
-                if(compare(front_string, new_arr_ele_completedPath.slice(0, new_arr_ele_completedPath.length - 1))){
+            let front_string              = completedPath.slice(0, completedPath.length - 1);
+            if (compare(new_arr_ele_completedPath.slice(-1), [''])) {
+                if (compare(front_string, new_arr_ele_completedPath.slice(0, new_arr_ele_completedPath.length - 1))) {
                     obj.pid = new_arr_ele.id;
-                    return ;
+                    return;
                 }
             }
             if (compare(front_string, new_arr_ele_completedPath)) {
@@ -97,7 +97,7 @@ function arrayToPid(data) {
 }
 
 function arrayToJson(treeArray) {
-    var r = [];
+    var r      = [];
     var tmpMap = {};
 
     for (var i = 0, l = treeArray.length; i < l; i++) {
@@ -124,7 +124,7 @@ function arrayToJson(treeArray) {
     return r
 }
 
-function main(arr){
+function main(arr) {
     return arrayToJson(arrayToPid(arr))
 }
 
