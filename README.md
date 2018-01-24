@@ -7,7 +7,7 @@ path string to object tree
 ```js
 import pathToTree from './pathToTress'
 
- var arr=[
+var arr=[
     "root/",
     "root/a/",
     "root/a/new_b.png",
@@ -34,6 +34,8 @@ console.log(pathToTree(arr))
 console.log(traverseTree(pathToTree(arr)))
 ```
 output
+
 ![image](https://raw.githubusercontent.com/Liaozhenting/pathToTree/master/example.png)
+
 ![image](https://raw.githubusercontent.com/Liaozhenting/pathToTree/master/example2.png)
 
