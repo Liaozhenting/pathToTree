@@ -37,5 +37,5 @@ output
 
 ![image](https://raw.githubusercontent.com/Liaozhenting/pathToTree/master/example.png)
 
-![image](https://raw.githubusercontent.com/Liaozhenting/pathToTree/master/example2.png)
+![image](https://github.com/Liaozhenting/pathToTree/blob/master/example2.PNG?raw=true)
 
