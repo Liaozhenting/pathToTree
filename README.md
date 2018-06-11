@@ -5,7 +5,7 @@ path string to object tree
 ## use
 
 ```js
-import pathToTree from './pathToTress'
+import pathToTree from './pathToTree'
 
 var arr=[
     "root/",

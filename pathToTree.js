@@ -20,8 +20,17 @@ const pathToTree = (input) => {
             // If we couldn't find an item in this list of children
             // that has the right name, create one:
             if (lastNode == currentNode) {
-                var newNode     = currentNode[k] = { key: input[i], title: wantedNode, children: [] };
-                    currentNode = newNode.children;
+                //创造对于层级的key
+                var node =input[i];
+                var newNode = currentNode[k] = {
+                    key:chain.slice(0,j+1).join("/"),
+                    title:wantedNode,
+                    children:[]
+                }
+                currentNode = newNode.children;
+                //原来的key保留
+                // var newNode     = currentNode[k] = { key: input[i], title: wantedNode, children: [] };
+                //     currentNode = newNode.children;
             } else {
                 delete currentNode.children
             }
@@ -29,22 +38,7 @@ const pathToTree = (input) => {
     }
     return output;
 }
-// traverse tree to do something
-const traverseTree = function(data) {
-    return data.map((item) => {
 
-        item.title = item.title.length > 10 ? item.title.substring(0,7)+"..." : item.title
-        if (item.children.length === 0) {
-            delete item.children
-            return item
-        } else {
-            beautify(item.children)
-            return item
-        }
-    })
-}
 
-export default {
-    pathToTree:pathToTree,
-    traverseTree:traverseTree
-}
+
+export default pathToTree;
