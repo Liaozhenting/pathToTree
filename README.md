@@ -31,7 +31,6 @@ var arr=[
 ]
 
 console.log(pathToTree(arr))
-console.log(traverseTree(pathToTree(arr)))
 ```
 output
 
