@@ -1,4 +1,4 @@
-pathToTree =  (input) => {
+const pathToTree =  (input) => {
   var root = [];
   for (let i=0;i<input.length;i++){
     var chain = input[i].split("/");
@@ -37,3 +37,5 @@ pathToTree =  (input) => {
 
   return root;
 }
+
+export default pathToTree
