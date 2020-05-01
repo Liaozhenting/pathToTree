@@ -1,13 +1,12 @@
 const pathToTree =  (input) => {
-  var root = [];
+  let root = [];
   for (let i=0;i<input.length;i++){
-    var chain = input[i].split("/");
-    var currentHierarchy = root;
-    for(var j = 0; j < chain.length;j++){
-      var wantedNode = chain[j]
-      // 最后一级是文件夹
+    let chain = input[i].split("/");
+    let currentHierarchy = root;
+    for(let j = 0; j < chain.length;j++){
+      let wantedNode = chain[j]
       if(wantedNode === ''){
-        break;
+        continue;
       }
       let lastHierarchy = currentHierarchy;
 
@@ -20,8 +19,14 @@ const pathToTree =  (input) => {
       }
 
       if(lastHierarchy === currentHierarchy) {
+        let key;
+        if(j === chain.length - 1){
+          key = input[i];
+        } else {
+          key = chain.slice(0,j+1).join('/')+'/';
+        }
         let newNode = {
-          key: input[i],
+          key: key,
           title: wantedNode,
           children: []
         };
